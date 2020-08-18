@@ -1,6 +1,6 @@
 # `@soundworks/plugin-[name]`
 
-> template project for starting the development of a new soundworks plugin
+> [`soundworks`](https://github.com/collective-soundworks/soundworks) plugin template project.
 
 ## Table of Contents
 
