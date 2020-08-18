@@ -1,12 +1,31 @@
-# `soundworks-plugin-template`
+# `@soundworks/plugin-[name]`
 
 > template project for starting the development of a new soundworks plugin
+
+## Table of Contents
+
+<!-- toc -->
+
+- [Installation](#installation)
+- [Example](#example)
+- [Usage](#usage)
+  * [Server](#server)
+  * [Client](#client)
+- [Additional Documentation](#additional-documentation)
+- [Credits](#credits)
+- [License](#license)
+
+<!-- tocstop -->
 
 ## Installation
 
 ```sh
 npm install @soundworks/plugin-[name] --save
 ```
+
+## Example
+
+A working example can be found in the [https://github.com/collective-soundworks/soundworks-examples](https://github.com/collective-soundworks/soundworks-examples) repository.
 
 ## Usage
 
@@ -21,6 +40,8 @@ npm install @soundworks/plugin-[name] --save
 ```js
 
 ```
+
+## Additional Documentation
 
 ## Credits
 

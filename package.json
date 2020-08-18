@@ -1,5 +1,5 @@
 {
-  "name": "@soundworks/plugin-[name]",
+  "name": "@soundworks/plugin-name",
   "version": "1.0.0",
   "description": "template project for starting the development of a new soundworks plugin",
   "authors": [
@@ -9,8 +9,9 @@
   "license": "BSD-3-Clause",
   "scripts": {
     "clean": "rm -Rf client && rm -Rf server",
+    "toc": "markdown-toc -i README.md",
     "prepublishOnly": "npm run build",
-    "build": "npm run clean && babel src --out-dir .",
+    "build": "npm run toc && npm run clean && babel src --out-dir .",
     "dev": "npm run build && chokidar src/ -c \"babel src --out-dir .\""
   },
   "publishConfig": {
@@ -26,6 +27,7 @@
     "@babel/core": "^7.11.1",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "chokidar": "^3.4.2",
-    "chokidar-cli": "^2.1.0"
+    "chokidar-cli": "^2.1.0",
+    "markdown-toc": "^1.2.0"
   }
 }
