@@ -9,9 +9,13 @@
 - [Installation](#installation)
 - [Example](#example)
 - [Usage](#usage)
-  * [Server](#server)
-  * [Client](#client)
-- [Additional Documentation](#additional-documentation)
+  * [Server installation](#server-installation)
+    + [Registering the plugin](#registering-the-plugin)
+    + [Requiring the plugin](#requiring-the-plugin)
+  * [Client installation](#client-installation)
+    + [Registering the plugin](#registering-the-plugin-1)
+    + [Requiring the plugin](#requiring-the-plugin-1)
+  * [Additional Documentation](#additional-documentation)
 - [Credits](#credits)
 - [License](#license)
 
@@ -29,19 +33,66 @@ A working example can be found in the [https://github.com/collective-soundworks/
 
 ## Usage
 
-### Server
+### Server installation
+
+#### Registering the plugin
 
 ```js
+// index.js
+import { Server } from '@soundworks/core/server';
+import plugin[Name]Factory from '@soundworks/plugin-[name]/server';
 
+const server = new Server();
+server.pluginManager.register('[name]', plugin[Name]Factory, {
+  // default to `.data/scripts`
+  directory: 'scripts',
+}, []);
 ```
 
-### Client
+#### Requiring the plugin
 
 ```js
+// MyExperience.js
+import { AbstractExperience } from '@soundworks/core/server';
 
+class MyExperience extends AbstractExperience {
+  constructor(server, clientType) {
+    super(server, clientType);
+    // require plugin in the experience
+    this.[name] = this.require('[name]');
+  }
+}
 ```
 
-## Additional Documentation
+### Client installation
+
+#### Registering the plugin
+
+```js
+// index.js
+import { Client } from '@soundworks/core/client';
+import plugin[Name]Factory from '@soundworks/plugin-[name]/client';
+
+const client = new Client();
+client.pluginManager.register('[name]', plugin[Name]Factory, {}, []);
+```
+
+#### Requiring the plugin
+
+```js
+// MyExperience.js
+import { Experience } from '@soundworks/core/client';
+
+class MyExperience extends Experience {
+  constructor(client) {
+    super(client);
+    // require plugin in the experience
+    this.[name] = this.require('[name]');
+  }
+}
+```
+
+### Additional Documentation
 
 ## Credits
 
